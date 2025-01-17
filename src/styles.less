@@ -1,0 +1,116 @@
+@import "reset";
+@import "variables";
+
+body {
+  font-family: sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  position: relative;
+  .content {
+    min-height: calc(100vh - 250px);
+    overflow: auto;
+    visibility: visible;
+  }
+  &.loading{
+    .content {
+      height: calc(100vh - 250px);
+      visibility: hidden;
+      overflow: hidden;
+    }
+  }
+}
+
+.color1 {
+  color: @color1;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+form {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  & > p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    label {
+      width: 100%;
+      display: block;
+      margin-bottom: .3rem;
+      color: @color1;
+      font-weight: bolder;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'],
+    input[type='url'],
+    input[type='password'],
+    input[type='number'],
+    input[type='date'],
+    input[type='file'],
+    textarea,
+    select {
+      width: 100%;
+      padding: .5rem;
+      border: 1px solid #e8e8e8;
+    }
+
+    button {
+      align-self: center;
+      background-color: @color1;
+      color: white;
+      text-transform: uppercase;
+      padding: .5rem 1rem;
+      border: 1px solid @color1;
+      cursor: pointer;
+
+      &:hover, &:focus {
+        transition: all 200ms ease-in;
+        background-color: lighten(@color1, 10%);
+      }
+    }
+  }
+}
+
+.loader {
+  height: calc(100vh - 250px);
+  position: absolute;
+  top: 200px;
+  background-color: white;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .inner {
+    height: 60px;
+    aspect-ratio: 1;
+    --c:no-repeat linear-gradient(@color1 0 0);
+    background: var(--c), var(--c), var(--c), var(--c);
+    background-size: 33.4% 33.4%;
+    animation: l2 2s infinite linear;
+    transform: rotate(90deg);
+  }
+  @keyframes l2 {
+    0%    {background-position:0   0  ,50%  0  ,0   50% ,50%  50%}
+    12.5% {background-position:50% 0  ,100% 0  ,0   50% ,50%  50%}
+    25%   {background-position:50% 0  ,100% 0  ,50% 50% ,100% 50%}
+    37.5% {background-position:50% 0  ,100% 50%,50% 50% ,100% 100%}
+    50%   {background-position:50% 50%,100% 50%,50% 100%,100% 100%}
+    62.5% {background-position:50% 50%,100% 50%,0   100%,50%  100%}
+    75%   {background-position:0   50%,50%  50%,0   100%,50%  100%}
+    87.5% {background-position:0   0  ,50%  50%,0   50% ,50%  100%}
+    100%  {background-position:0   0  ,50%  0  ,0   50% ,50%  50%}
+  }
+}

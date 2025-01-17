@@ -1,0 +1,20 @@
+@import "../../../../../variables";
+
+a {
+  background-color: @color1;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid @color1;
+  cursor: pointer;
+  font-size: .7rem;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-width: 80px;
+  &:hover, &:focus {
+    transition: all 200ms ease-in;
+    background-color: lighten(@color1, 10%);
+  }
+}

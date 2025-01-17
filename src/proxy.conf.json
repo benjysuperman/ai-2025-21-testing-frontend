@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://ai-2025-21-testing-backend.vercel.app",
+    "secure": false
+  }
+}

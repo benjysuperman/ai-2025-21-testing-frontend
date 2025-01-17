@@ -1,0 +1,47 @@
+@import "../../../../variables";
+
+:host {
+  width: 100%;
+  .todo {
+    width: 100%;
+    padding: 1rem;
+    background-color: lighten(@color1, 45%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid @color1;
+    h2 {
+      cursor: pointer;
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      input {
+        padding: 0;
+        margin: 0;
+        width: 20px;
+        height: 20px;
+      }
+      a {
+        text-decoration: none;
+        background-color: @error;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &.done {
+      background-color: #efefef;
+      opacity: 0.48;
+      border: 1px solid #afafaf;
+      h2 {
+        text-decoration: line-through;
+      }
+    }
+  }
+}

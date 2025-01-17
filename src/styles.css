@@ -1,1 +1,252 @@
-/* You can add global styles to this file, and also import other style files */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+main {
+  min-height: 100vh;
+  position: relative;
+}
+main .content {
+  min-height: calc(100vh - 250px);
+  overflow: auto;
+  visibility: visible;
+}
+main.loading .content {
+  height: calc(100vh - 250px);
+  visibility: hidden;
+  overflow: hidden;
+}
+.color1 {
+  color: #5e4dab;
+}
+.bold {
+  font-weight: bolder;
+}
+form {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+form > p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+form > p label {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #5e4dab;
+  font-weight: bolder;
+}
+form > p input[type='text'],
+form > p input[type='email'],
+form > p input[type='tel'],
+form > p input[type='url'],
+form > p input[type='password'],
+form > p input[type='number'],
+form > p input[type='date'],
+form > p input[type='file'],
+form > p textarea,
+form > p select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e8e8e8;
+}
+form > p button {
+  align-self: center;
+  background-color: #5e4dab;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border: 1px solid #5e4dab;
+  cursor: pointer;
+}
+form > p button:hover,
+form > p button:focus {
+  transition: all 200ms ease-in;
+  background-color: #7c6ebd;
+}
+.loader {
+  height: calc(100vh - 250px);
+  position: absolute;
+  top: 200px;
+  background-color: white;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader .inner {
+  height: 60px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(#5e4dab 0 0);
+  background: var(--c), var(--c), var(--c), var(--c);
+  background-size: 33.4% 33.4%;
+  animation: l2 2s infinite linear;
+  transform: rotate(90deg);
+}
+@keyframes l2 {
+  0% {
+    background-position: 0 0, 50% 0, 0 50%, 50% 50%;
+  }
+  12.5% {
+    background-position: 50% 0, 100% 0, 0 50%, 50% 50%;
+  }
+  25% {
+    background-position: 50% 0, 100% 0, 50% 50%, 100% 50%;
+  }
+  37.5% {
+    background-position: 50% 0, 100% 50%, 50% 50%, 100% 100%;
+  }
+  50% {
+    background-position: 50% 50%, 100% 50%, 50% 100%, 100% 100%;
+  }
+  62.5% {
+    background-position: 50% 50%, 100% 50%, 0 100%, 50% 100%;
+  }
+  75% {
+    background-position: 0 50%, 50% 50%, 0 100%, 50% 100%;
+  }
+  87.5% {
+    background-position: 0 0, 50% 50%, 0 50%, 50% 100%;
+  }
+  100% {
+    background-position: 0 0, 50% 0, 0 50%, 50% 50%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
