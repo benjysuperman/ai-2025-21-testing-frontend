@@ -1,0 +1,20 @@
+<div *ngIf="todos()" class="todos">
+  <app-feedback-messages *ngIf="feedback_messages" [messages]="feedback_messages"/>
+  <button (click)="new()">{{ 'ADD_TODO' | translate }}</button>
+  <form (submit)="submit($event)" *ngIf="formOpen()" [formGroup]="todoForm" action="">
+    <input formControlName="ctlId" id="ctlId" name="ctlId" type="hidden"/>
+    <p>
+      <label for="ctlTitle">{{'LBL_TODO_TITLE'|translate}}</label>
+      <input formControlName="ctlTitle" id="ctlTitle" name="ctlTitle" type="text">
+    </p>
+    <p>
+      <button>{{'BTN_TODO_SAVE'|translate}}</button>
+    </p>
+  </form>
+  <app-todo *ngFor="let todo of todos()"
+            [deleteEmitter]="$deleteObserver"
+            [editEmitter]="$editObserver"
+            [doneEmitter]="$doneObserver"
+            [todo]="todo"
+  />
+</div>

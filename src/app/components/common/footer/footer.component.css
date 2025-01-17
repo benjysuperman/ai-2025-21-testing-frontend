@@ -1,0 +1,11 @@
+:host {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #5e4dab;
+  font-size: 0.8rem;
+  color: white;
+}
+/*# sourceMappingURL=footer.component.css.map */

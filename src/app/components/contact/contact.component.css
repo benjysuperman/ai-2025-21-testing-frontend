@@ -1,0 +1,59 @@
+form {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.radio-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #efefef;
+  padding: 1rem;
+}
+.radio-field span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.radio-field span label,
+.radio-field span input {
+  margin: 0;
+}
+.checkbox-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.checkbox-field label,
+.checkbox-field input {
+  margin: 0;
+}
+h2 {
+  font-weight: bolder;
+  color: #5e4dab;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem 0 2rem 0;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.buttons button[type='reset'] {
+  background-color: tomato;
+  border-color: tomato;
+}
+.buttons button[type='reset']:hover,
+.buttons button[type='reset']:focus {
+  background-color: #ff8e7a;
+}
+input[type='file'] {
+  cursor: pointer;
+}
+/*# sourceMappingURL=contact.component.css.map */

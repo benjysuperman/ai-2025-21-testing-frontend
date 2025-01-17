@@ -1,0 +1,7 @@
+<nav>
+  <ul>
+    <li><a class="{{this.current_url() == 'home' ? 'active' : ''}}" (click)='loadUrl($event, "")' href="/">{{ 'LINK_HOME' | translate }}</a></li>
+    <li *ngIf="getUser()"><a class="{{this.current_url() == 'todos' ? 'active' : ''}}" (click)='loadUrl($event, "todos")' href="/todos">{{ 'LINK_TODO' | translate }}</a></li>
+    <li *ngIf="getUser()"><a class="{{this.current_url() == 'contact' ? 'active' : ''}}" (click)='loadUrl($event, "contact")' href="/contact">{{ 'LINK_CONTACT' | translate }}</a></li>
+  </ul>
+</nav>

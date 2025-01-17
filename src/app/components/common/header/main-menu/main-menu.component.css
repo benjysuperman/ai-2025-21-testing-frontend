@@ -1,0 +1,42 @@
+:host {
+  width: 100%;
+  display: flex;
+  background-color: #f6f6f6;
+  border-top: 1px solid #d0d0d0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16);
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  height: 60px;
+}
+:host ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+:host li a {
+  min-width: 100px;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #5e4dab;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+:host li a:hover,
+:host li a:focus {
+  transition: all 200ms ease-in;
+  background-color: #9c91cd;
+}
+:host li a.active {
+  transition: unset;
+  user-select: none;
+  cursor: default;
+  background-color: #9c91cd;
+  color: white;
+}
+/*# sourceMappingURL=main-menu.component.css.map */

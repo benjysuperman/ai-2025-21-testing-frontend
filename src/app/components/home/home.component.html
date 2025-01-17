@@ -1,0 +1,19 @@
+<div *ngIf="!getUser()">
+  <app-feedback-messages *ngIf="feedback_messages" [messages]="feedback_messages" />
+  <form id="login-form" action="" (submit)="login($event)" [formGroup]="loginForm">
+    <p>
+      <label for="username">{{ 'LBL_USERNAME' | translate }}</label>
+      <input type="text" name="username" id="username" autocomplete="off" [formControl]="ctlUsername">
+    </p>
+    <p>
+      <label for="password">{{ 'LBL_PASSWORD' | translate }}</label>
+      <input type="password" autocomplete="off" name="password" id="password" [formControl]="ctlPassword">
+    </p>
+    <p>
+      <button id="login-button" type="submit">{{ 'BTN_LOGIN' | translate }}</button>
+    </p>
+  </form>
+</div>
+<div *ngIf="getUser()" id="presentation">
+  <h2 id="home-title">{{ 'HOME_WELCOME'|translate }} <span class="color1 bold">{{getUser()?.username}}</span></h2>
+</div>

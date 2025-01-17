@@ -1,0 +1,20 @@
+a {
+  background-color: #5e4dab;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid #5e4dab;
+  cursor: pointer;
+  font-size: 0.7rem;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-width: 80px;
+}
+a:hover,
+a:focus {
+  transition: all 200ms ease-in;
+  background-color: #7c6ebd;
+}
+/*# sourceMappingURL=logout.component.css.map */

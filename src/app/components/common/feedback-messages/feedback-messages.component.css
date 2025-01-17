@@ -1,0 +1,31 @@
+:host > div {
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+:host ::ng-deep .message {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid transparent;
+  color: white;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.16);
+}
+:host ::ng-deep .message.success {
+  background-color: #4ec0ab;
+  border-color: #74cdbd;
+}
+:host ::ng-deep .message.info {
+  background-color: #5e4dab;
+  border-color: #7c6ebd;
+}
+:host ::ng-deep .message.error {
+  background-color: tomato;
+  border-color: #ff8e7a;
+}
+/*# sourceMappingURL=feedback-messages.component.css.map */

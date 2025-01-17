@@ -1,0 +1,61 @@
+@import "../../../variables";
+
+form {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.radio-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #efefef;
+  padding: 1rem;
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    label, input {
+      margin: 0;
+    }
+  }
+}
+
+.checkbox-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  label, input {
+    margin: 0;
+  }
+}
+
+h2 {
+  font-weight: bolder;
+  color: @color1;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem 0 2rem 0;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  button[type='reset'] {
+    background-color: @error;
+    border-color: @error;
+    &:hover, &:focus {
+      background-color: lighten(@error, 10%);
+    }
+  }
+}
+
+input[type='file']{
+  cursor: pointer;
+}

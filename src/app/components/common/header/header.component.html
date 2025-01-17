@@ -1,0 +1,11 @@
+<header>
+  <div class="top-header">
+    <app-lang-switch/>
+    <app-logout *ngIf="getCurrentUser()" />
+  </div>
+  <div class="header">
+    <img src="/img/logo-{{current_language()}}.png" alt="Logo {{ current_language() }}">
+    <h1>{{ 'APP_TITLE' | translate }}</h1>
+  </div>
+  <app-main-menu/>
+</header>
