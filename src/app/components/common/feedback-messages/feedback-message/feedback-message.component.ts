@@ -1,5 +1,6 @@
-import {Component, ElementRef, inject, Input} from '@angular/core';
+import {Component, ElementRef, inject, Input, OnInit} from '@angular/core';
 import {FeedBackMessage} from '../../../../entities/FeedBackMessage';
+import {elementAt} from 'rxjs';
 
 @Component({
   selector: 'app-feedback-message',

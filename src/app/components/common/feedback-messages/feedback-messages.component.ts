@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, ElementRef, inject, Input, OnInit} from '@angular/core';
 import {FeedBackMessage} from '../../../entities/FeedBackMessage';
 import {CommonModule} from '@angular/common';
 import {FeedbackMessageComponent} from './feedback-message/feedback-message.component';
@@ -13,7 +13,7 @@ import {FeedbackMessageComponent} from './feedback-message/feedback-message.comp
   templateUrl: './feedback-messages.component.html',
   styleUrl: './feedback-messages.component.css'
 })
-export class FeedbackMessagesComponent {
+export class FeedbackMessagesComponent{
   @Input({required: true})
   public messages: FeedBackMessage[]|null;
 }

@@ -13,7 +13,6 @@ export class ContactForm {
 
 
   constructor(args: any) {
-    console.log(args);
     this.name = args.name;
     this.gender = args.gender;
     this.email = args.email;

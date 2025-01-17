@@ -1,11 +1,11 @@
 export class Todo {
-  public id: number;
+  public id: string;
   public title: string;
   public done: boolean;
   public user_id: number|null;
 
   constructor() {
-    this.id = 0;
+    this.id = "";
     this.title = "";
     this.done = false;
     this.user_id = null;

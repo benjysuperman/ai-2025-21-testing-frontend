@@ -53,7 +53,8 @@ export class HomeComponent {
           this.user = this.userService.getUser();
         },
         error: error => {
-          this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)];
+          this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+          setTimeout(() => this.feedback_messages = null, 3000);
         }
       });
   }

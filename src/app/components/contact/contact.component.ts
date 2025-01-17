@@ -42,21 +42,6 @@ export class ContactComponent implements OnInit {
   protected feedback_messages: FeedBackMessage[]|null = null;
 
   constructor() {
-    /**
-    this.mock = new ContactForm({
-      "name": "Benjamin Wilmet",
-      "gender": "M",
-      "email": "wilmet.benjamin@hotmail.com",
-      "tel": "0493547017",
-      "age": 41,
-      "website": "https://www.google.be",
-      "file": null,
-      "object": 1,
-      "reply_on": new Date(),
-      "message": "Hello from mock",
-      "agree": true
-    });
-    **/
     this.mock = new ContactForm({
       "name": "",
       "gender": "",
@@ -131,6 +116,15 @@ export class ContactComponent implements OnInit {
       "message": this.ctlMessage.value,
       "agree": this.ctlAgree.value
     });
-    this.contactService.send(contactForm).subscribe();
+    this.contactService.send(contactForm).subscribe({
+      next: (data:any) => {
+        this.feedback_messages = [new FeedBackMessage("success", data.msg, data.status)];
+        setTimeout(() => this.feedback_messages = null, 3000);
+      },
+      error: error => {
+        this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)];
+        setTimeout(() => this.feedback_messages = null, 3000);
+      }
+    });
   }
 }

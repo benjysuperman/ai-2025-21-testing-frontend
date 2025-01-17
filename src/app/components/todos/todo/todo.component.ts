@@ -16,25 +16,25 @@ export class TodoComponent {
   public todo: Todo;
 
   @Input({required: true})
-  public deleteEmitter: EventEmitter<number>;
+  public deleteEmitter: EventEmitter<string>;
 
   @Input({required: true})
-  public editEmitter: EventEmitter<number>;
+  public editEmitter: EventEmitter<string>;
 
   @Input({required: true})
-  public doneEmitter: EventEmitter<number>;
+  public doneEmitter: EventEmitter<string>;
 
 
-  delete(event: MouseEvent, id: number) {
+  delete(event: MouseEvent, id: string) {
     event.preventDefault();
     this.deleteEmitter.emit(id);
   }
 
-  edit(id:number){
+  edit(id:string){
     this.editEmitter.emit(id);
   }
 
-  done(event: Event, id: number) {
+  done(event: Event, id: string) {
     this.doneEmitter.emit(id);
   }
 }

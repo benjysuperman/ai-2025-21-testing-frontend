@@ -28,9 +28,9 @@ export class TodosComponent {
   private formBuilder: FormBuilder = inject(FormBuilder);
   protected todos: WritableSignal<Todo[]|null> = signal(null);
   protected feedback_messages: FeedBackMessage[]|null;
-  protected $deleteObserver: EventEmitter<number> = new EventEmitter<number>();
-  protected $editObserver: EventEmitter<number> = new EventEmitter<number>();
-  protected $doneObserver: EventEmitter<number> = new EventEmitter<number>();
+  protected $deleteObserver: EventEmitter<string> = new EventEmitter<string>();
+  protected $editObserver: EventEmitter<string> = new EventEmitter<string>();
+  protected $doneObserver: EventEmitter<string> = new EventEmitter<string>();
   public formOpen: WritableSignal<boolean> = signal(false);
   public todoForm: FormGroup;
   public ctlTitle: FormControl;
@@ -39,7 +39,7 @@ export class TodosComponent {
   constructor() {
     this.feedback_messages = null;
     this.ctlTitle = this.formBuilder.control("");
-    this.ctlId = this.formBuilder.control(0);
+    this.ctlId = this.formBuilder.control("");
     this.todoForm = this.formBuilder.group({
       "ctlTitle": this.ctlTitle,
       "ctlId": this.ctlId
@@ -55,7 +55,10 @@ export class TodosComponent {
       .pipe(catchError((error: HttpErrorResponse) => throwError(() => error)))
       .subscribe({
         next: (data:any) => this.todos?.set(data.todos),
-        error: error => this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+        error: error => {
+          this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)];
+          setTimeout(() => this.feedback_messages = null, 3000);
+        }
       });
   }
 
@@ -65,21 +68,24 @@ export class TodosComponent {
     this.todoForm.get("ctlTitle")?.setValue("");
   }
 
-  edit(id: number){
+  edit(id: string){
     let todo = this.todos()!.find(t => t.id === id);
     this.todoForm.get("ctlTitle")!.setValue(todo?.title);
     this.todoForm.get("ctlId")!.setValue(todo?.id);
     this.formOpen.set(true);
   }
 
-  done(id: number){
+  done(id: string){
     let todo = this.todos()!.find(t => t.id === id);
     if(todo){
       todo.done = !todo.done;
       this.todosService.save(todo).pipe(catchError((error: HttpErrorResponse) => throwError(() => error)))
         .subscribe({
           next: (data:any) => this.loadUserTodos(),
-          error: error => this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+          error: error => {
+            this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+            setTimeout(() => this.feedback_messages = null, 3000);
+          }
         });
     }
   }
@@ -89,18 +95,24 @@ export class TodosComponent {
     $event.preventDefault();
     const todo = new Todo();
     todo.title = this.ctlTitle.value.trim();
-    todo.id = parseInt(this.ctlId.value, 10);
-    if(todo.id > 0){
+    todo.id = this.ctlId.value;
+    if(todo.id !== ""){
       this.todosService.save(todo).pipe(catchError((error: HttpErrorResponse) => throwError(() => error)))
         .subscribe({
           next: (data:any) => this.loadUserTodos(),
-          error: error => this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+          error: error => {
+            this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+            setTimeout(() => this.feedback_messages = null, 3000);
+          }
         });
     } else {
       this.todosService.add(todo).pipe(catchError((error: HttpErrorResponse) => throwError(() => error)))
         .subscribe({
           next: (data:any) => this.loadUserTodos(),
-          error: error => this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+          error: error => {
+            this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+            setTimeout(() => this.feedback_messages = null, 3000);
+          }
         });
     }
     this.closeForm();
@@ -109,16 +121,19 @@ export class TodosComponent {
   closeForm(){
     this.formOpen.set(false);
     this.todoForm.get("ctlTitle")?.setValue("");
-    this.todoForm.get("ctlId")?.setValue(0);
+    this.todoForm.get("ctlId")?.setValue("");
   }
 
-  delete(id: number){
+  delete(id: string){
     this.todosService.delete(id).pipe(catchError((error: HttpErrorResponse) => throwError(() => error)))
       .subscribe({
         next: (data:any) => {
           this.loadUserTodos();
         },
-        error: error => this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+        error: error => {
+          this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
+          setTimeout(() => this.feedback_messages = null, 3000);
+        }
       });
   }
 }
