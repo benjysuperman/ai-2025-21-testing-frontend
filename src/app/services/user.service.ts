@@ -19,7 +19,7 @@ export class UserService {
 
   loginByUsernameAndPassword(username: string, password: string){
     return this.httpClient
-      .post("https://ai-2025-21-testing-backend-qlsqb63i7-benjymans-projects.vercel.app/api/" + this.translateService.currentLang + "/login", {"username": username, "password": password});
+      .post("https://ai-2025-21-testing-backend.vercel.app//api/" + this.translateService.currentLang + "/login", {"username": username, "password": password});
   }
 
   getToken(){

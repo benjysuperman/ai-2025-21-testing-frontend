@@ -15,7 +15,7 @@ export class ContactService {
 
   send(contactForm: any) {
     return this.httpClient
-      .post("https://ai-2025-21-testing-backend-qlsqb63i7-benjymans-projects.vercel.app/api/" + this.translateService.currentLang + "/contact", {...contactForm}, {headers: {"Authorization": "Bearer " + this.userService.getToken()}});
+      .post("https://ai-2025-21-testing-backend.vercel.app//api/" + this.translateService.currentLang + "/contact", {...contactForm}, {headers: {"Authorization": "Bearer " + this.userService.getToken()}});
   }
 
 }
