@@ -1,8 +1,7 @@
-<main class="{{loader() ? 'loading' : ''}}">
+<main>
   <app-header></app-header>
   <div class="content">
     <router-outlet />
   </div>
-  <div class="loader" *ngIf="loader()"><div class="inner"></div></div>
   <app-footer></app-footer>
 </main>

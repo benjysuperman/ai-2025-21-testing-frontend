@@ -3,7 +3,7 @@
   "/api": {
     "target": "https://ai-2025-21-testing-backend.vercel.app",
     "secure": false
-  },
+  }
   /**
   "/api": {
     "target": "http://localhost:5000",
