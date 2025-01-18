@@ -57,7 +57,7 @@ export class TodosComponent {
         next: (data:any) => this.todos?.set(data.todos),
         error: error => {
           this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)];
-          setTimeout(() => this.feedback_messages = null, 3000);
+
         }
       });
   }
@@ -84,7 +84,7 @@ export class TodosComponent {
           next: (data:any) => this.loadUserTodos(),
           error: error => {
             this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
-            setTimeout(() => this.feedback_messages = null, 3000);
+
           }
         });
     }
@@ -102,7 +102,7 @@ export class TodosComponent {
           next: (data:any) => this.loadUserTodos(),
           error: error => {
             this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
-            setTimeout(() => this.feedback_messages = null, 3000);
+
           }
         });
     } else {
@@ -111,7 +111,7 @@ export class TodosComponent {
           next: (data:any) => this.loadUserTodos(),
           error: error => {
             this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
-            setTimeout(() => this.feedback_messages = null, 3000);
+
           }
         });
     }
@@ -132,7 +132,6 @@ export class TodosComponent {
         },
         error: error => {
           this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
-          setTimeout(() => this.feedback_messages = null, 3000);
         }
       });
   }

@@ -27,21 +27,13 @@ import {NgIf} from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Todo';
   current_user: User|null;
   private translate: TranslateService = inject(TranslateService);
-  private listenersService: ListenersService = inject(ListenersService);
-  public loader: WritableSignal<boolean> = signal(true);
 
   constructor() {
     this.current_user = null;
     this.translate.addLangs(['fr', 'nl', 'en']);
     this.translate.setDefaultLang('fr');
     this.translate.use('fr');
-    this.listenersService.$urlChanged.subscribe(() => {
-      this.loader.set(true);
-      setTimeout(() => this.loader.set(false), 400);
-    });
-    setTimeout(() => this.loader.set(false), 400);
   }
 }

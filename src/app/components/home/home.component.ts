@@ -54,7 +54,7 @@ export class HomeComponent {
         },
         error: error => {
           this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)]
-          setTimeout(() => this.feedback_messages = null, 3000);
+
         }
       });
   }

@@ -119,11 +119,9 @@ export class ContactComponent implements OnInit {
     this.contactService.send(contactForm).subscribe({
       next: (data:any) => {
         this.feedback_messages = [new FeedBackMessage("success", data.msg, data.status)];
-        setTimeout(() => this.feedback_messages = null, 3000);
       },
       error: error => {
         this.feedback_messages = [new FeedBackMessage("error", error.error.msg, error.status)];
-        setTimeout(() => this.feedback_messages = null, 3000);
       }
     });
   }
