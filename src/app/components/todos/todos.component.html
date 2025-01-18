@@ -1,6 +1,6 @@
 <div *ngIf="todos()" class="todos">
   <app-feedback-messages *ngIf="feedback_messages" [messages]="feedback_messages"/>
-  <button (click)="new()">{{ 'ADD_TODO' | translate }}</button>
+  <button id="add" (click)="new()">{{ 'ADD_TODO' | translate }}</button>
   <form (submit)="submit($event)" *ngIf="formOpen()" [formGroup]="todoForm" action="">
     <input formControlName="ctlId" id="id" name="id" type="hidden"/>
     <p>
