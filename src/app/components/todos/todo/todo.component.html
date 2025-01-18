@@ -1,4 +1,4 @@
-<div class="todo{{todo.done ? ' done' : ''}}" data-todo="{{todo.id}}">
+<div class="todo{{todo.done ? ' done' : ''}}" id="todo-{{todo.id}}">
   <h2 (click)="edit(todo.id)">{{todo.title}}</h2>
   <div class="actions">
     <input *ngIf="todo.done" type="checkbox" name="done" (change)="done($event, todo.id)" checked/>
