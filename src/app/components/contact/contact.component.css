@@ -4,7 +4,7 @@ form {
   display: grid;
   padding: 0.5rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "right left" "bottom bottom";
+  grid-template-areas: "right left";
   grid-gap: 10px;
 }
 .right {
@@ -12,9 +12,6 @@ form {
 }
 .left {
   grid-area: left;
-}
-.buttons {
-  grid-area: bottom;
 }
 .radio-field {
   display: flex;
