@@ -1,61 +1,67 @@
 <app-feedback-messages *ngIf="feedback_messages" [messages]="feedback_messages"/>
 <h2>{{ "CONTACT_FORM_TITLE"|translate}}</h2>
 <form action="" [formGroup]="contactForm" (submit)="submit($event)">
-  <p>
-    <label for="name">{{ "CONTACT_NAME"|translate }}</label>
-    <input type="text" name="name" id="name" [formControl]="ctlName">
-  </p>
-  <p class="radio-field">
-    <span>
-      <input type="radio" id="M" name="gender" value="M" [formControl]="ctlGender" />
-      <label for="M">{{ 'CONTACT_GENDER_MALE'|translate }}</label>
-    </span>
-    <span>
-      <input type="radio" id="F" name="gender" value="F" [formControl]="ctlGender" />
-      <label for="F">{{ 'CONTACT_GENDER_FEMALE'|translate }}</label>
-    </span>
-    <span>
-      <input type="radio" id="O" name="gender" value="O" [formControl]="ctlGender" />
-      <label for="O">{{ 'CONTACT_GENDER_OTHER'|translate }}</label>
-    </span>
-  </p>
-  <p>
-    <label for="name">{{ "CONTACT_EMAIL"|translate }}</label>
-    <input type="email" name="email" id="email" [formControl]="ctlEmail">
-  </p>
-  <p>
-    <label for="tel">{{ "CONTACT_TEL"|translate }}</label>
-    <input type="tel" name="tel" id="tel" [formControl]="ctlTel">
-  </p>
-  <p>
-    <label for="age">{{ "CONTACT_AGE"|translate }}</label>
-    <input type="number" name="age" id="age" [formControl]="ctlAge">
-  </p>
-  <p>
-    <label for="linked_url">{{ "CONTACT_LINKEDIN_URL"|translate }}</label>
-    <input type="url" name="linked_url" id="linked_url" [formControl]="ctlLinked">
-  </p>
-  <p>
-    <label for="object">{{ "CONTACT_OBJECT"|translate }}</label>
-    <select id="object" name="object" [formControl]="ctlObject">
-      <option *ngFor="let s of subjects; index as i" value="{{i}}">{{s}}</option>
-    </select>
-  </p>
-  <p>
-    <textarea id="message" name="message" [formControl]="ctlMessage"></textarea>
-  </p>
-  <p>
-    <label for="reply_date">{{ "CONTACT_REPLY_DATE"|translate }}</label>
-    <input type="date" id="reply_date" name="reply_date" [formControl]="ctlReplyDate" />
-  </p>
-  <p>
-    <label for="file">{{ "CONTACT_FILE"|translate }}</label>
-    <input (change)="handleUpload($event)" type="file" id="file" name="file" [formControl]="ctlFile" />
-  </p>
-  <p class="checkbox-field">
-    <input type="checkbox" id="agree" name="agree" [formControl]="ctlAgree"/>
-    <label for="agree">{{ "CONTACT_AGREE"|translate }}</label>
-  </p>
+  <div class="right">
+
+    <p>
+      <label for="name">{{ "CONTACT_NAME"|translate }}</label>
+      <input type="text" name="name" id="name" [formControl]="ctlName">
+    </p>
+    <p class="radio-field">
+      <span>
+        <input type="radio" id="M" name="gender" value="M" [formControl]="ctlGender" />
+        <label for="M">{{ 'CONTACT_GENDER_MALE'|translate }}</label>
+      </span>
+      <span>
+        <input type="radio" id="F" name="gender" value="F" [formControl]="ctlGender" />
+        <label for="F">{{ 'CONTACT_GENDER_FEMALE'|translate }}</label>
+      </span>
+      <span>
+        <input type="radio" id="O" name="gender" value="O" [formControl]="ctlGender" />
+        <label for="O">{{ 'CONTACT_GENDER_OTHER'|translate }}</label>
+      </span>
+    </p>
+    <p>
+      <label for="name">{{ "CONTACT_EMAIL"|translate }}</label>
+      <input type="email" name="email" id="email" [formControl]="ctlEmail">
+    </p>
+    <p>
+      <label for="tel">{{ "CONTACT_TEL"|translate }}</label>
+      <input type="tel" name="tel" id="tel" [formControl]="ctlTel">
+    </p>
+    <p>
+      <label for="age">{{ "CONTACT_AGE"|translate }}</label>
+      <input type="number" name="age" id="age" [formControl]="ctlAge">
+    </p>
+    <p>
+      <label for="linked_url">{{ "CONTACT_LINKEDIN_URL"|translate }}</label>
+      <input type="url" name="linked_url" id="linked_url" [formControl]="ctlLinked">
+    </p>
+  </div>
+  <div class="left">
+
+    <p>
+      <label for="object">{{ "CONTACT_OBJECT"|translate }}</label>
+      <select id="object" name="object" [formControl]="ctlObject">
+        <option *ngFor="let s of subjects; index as i" value="{{i}}">{{s}}</option>
+      </select>
+    </p>
+    <p>
+      <textarea id="message" name="message" [formControl]="ctlMessage"></textarea>
+    </p>
+    <p>
+      <label for="reply_date">{{ "CONTACT_REPLY_DATE"|translate }}</label>
+      <input type="date" id="reply_date" name="reply_date" [formControl]="ctlReplyDate" />
+    </p>
+    <p>
+      <label for="file">{{ "CONTACT_FILE"|translate }}</label>
+      <input (change)="handleUpload($event)" type="file" id="file" name="file" [formControl]="ctlFile" />
+    </p>
+    <p class="checkbox-field">
+      <input type="checkbox" id="agree" name="agree" [formControl]="ctlAgree"/>
+      <label for="agree">{{ "CONTACT_AGREE"|translate }}</label>
+    </p>
+  </div>
   <p class="buttons">
     <button type="submit">{{"CONTACT_SEND"|translate}}</button>
     <button type="reset">{{"CONTACT_RESET"|translate}}</button>

@@ -158,13 +158,21 @@ form {
   gap: 1rem;
   flex-direction: column;
 }
-form > p {
+form > div {
+  padding: 0.2rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+form > p,
+form > div > p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-form > p label {
+form > p label,
+form > div > p label {
   width: 100%;
   display: block;
   margin-bottom: 0.3rem;
@@ -172,20 +180,31 @@ form > p label {
   font-weight: bolder;
 }
 form > p input[type='text'],
+form > div > p input[type='text'],
 form > p input[type='email'],
+form > div > p input[type='email'],
 form > p input[type='tel'],
+form > div > p input[type='tel'],
 form > p input[type='url'],
+form > div > p input[type='url'],
 form > p input[type='password'],
+form > div > p input[type='password'],
 form > p input[type='number'],
+form > div > p input[type='number'],
 form > p input[type='date'],
+form > div > p input[type='date'],
 form > p input[type='file'],
+form > div > p input[type='file'],
 form > p textarea,
-form > p select {
+form > div > p textarea,
+form > p select,
+form > div > p select {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #e8e8e8;
 }
-form > p button {
+form > p button,
+form > div > p button {
   align-self: center;
   background-color: #5e4dab;
   color: white;
@@ -195,7 +214,9 @@ form > p button {
   cursor: pointer;
 }
 form > p button:hover,
-form > p button:focus {
+form > div > p button:hover,
+form > p button:focus,
+form > div > p button:focus {
   transition: all 200ms ease-in;
   background-color: #7c6ebd;
 }

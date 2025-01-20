@@ -3,8 +3,21 @@
 form {
   max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  padding: .5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "right left" "bottom bottom";
+  grid-gap: 10px;
 }
-
+.right {
+  grid-area: right;
+}
+.left {
+  grid-area: left;
+}
+.buttons {
+  grid-area: bottom;
+}
 .radio-field {
   display: flex;
   flex-direction: column;
@@ -40,7 +53,7 @@ h2 {
   font-size: 1.2rem;
   text-transform: uppercase;
   text-align: center;
-  padding: 1rem 0 2rem 0;
+  padding: 1rem 0 0.5rem 0;
 }
 .buttons {
   display: flex;
